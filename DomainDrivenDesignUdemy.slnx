@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="DomainDrivenDesignUdemy.Application/DomainDrivenDesignUdemy.Application.csproj" Id="f6aeef46-0108-465b-8b8f-0d0623a54ee1" />
+  <Project Path="DomainDrivenDesignUdemy.ConsoleApp/DomainDrivenDesignUdemy.ConsoleApp.csproj" />
+  <Project Path="DomainDrivenDesignUdemy.Domain/DomainDrivenDesignUdemy.Domain.csproj" />
+  <Project Path="DomainDrivenDesignUdemy.Infrastructur/DomainDrivenDesignUdemy.Infrastructur.csproj" Id="e71b1d96-d7c7-486c-a53e-23ab2e28c11c" />
+</Solution>
