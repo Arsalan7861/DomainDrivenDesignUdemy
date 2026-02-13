@@ -13,9 +13,9 @@ This solution demonstrates Domain-Driven Design (DDD) using a layered architectu
 
 - **Entities**: `Entity` base class provides identity and equality.
 - **Aggregates**:
-	- `Order` is an aggregate root controlling `OrderLine` creation/removal.
-	- `Category` and `Product` form another aggregate boundary (category owns product list).
-	- `User` is an aggregate root with behavior methods.
+  - `Order` is an aggregate root controlling `OrderLine` creation/removal.
+  - `Category` and `Product` form another aggregate boundary (category owns product list).
+  - `User` is an aggregate root with behavior methods.
 - **Value Objects**: `Money`, `Name`, `Email`, `Address`, `Password` (immutability, equality by value).
 - **Repositories**: Interfaces such as `IOrderRepository`, `IProductRepository`, `IUserRepository` (in Domain) for persistence abstraction.
 - **Domain Services / Events**: Hooks are prepared (domain event handlers referenced in Application DI).
@@ -23,23 +23,27 @@ This solution demonstrates Domain-Driven Design (DDD) using a layered architectu
 ## DDD Concepts Explained
 
 ### Ubiquitous Language
+
 DDD starts with a shared vocabulary between developers and domain experts. Here, terms like **Order**, **OrderLine**, **Money**, **Category**, and **User** are part of the ubiquitous language, reflected directly in code.
 
 ### Tactical Design (Inside a Bounded Context)
+
 Tactical design is about modeling the domain with building blocks:
 
 - **Entities**: Objects with identity over time. Example: `Order`, `User`, `Product`.
 - **Value Objects**: Immutable objects that are compared by value. Example: `Money`, `Name`, `Email`.
 - **Aggregates**: Consistency boundaries. The aggregate root is the only entry point for changes inside the aggregate.
-	- `Order` controls `OrderLine` creation and removal, ensuring invariants like quantity > 0.
+  - `Order` controls `OrderLine` creation and removal, ensuring invariants like quantity > 0.
 - **Factories**: Creation logic outside constructors, often as static methods (see `User.CreateUser`).
 - **Repositories**: Collection-like interfaces for aggregates that hide persistence.
 - **Domain Events**: Signals that something meaningful occurred. The Application project registers handlers, ready for domain event workflows.
 
 ### Strategic Design (Across the System)
-Strategic design defines *where* models live and *how* they relate.
+
+Strategic design defines _where_ models live and _how_ they relate.
 
 #### Bounded Context
+
 A bounded context is a boundary within which a particular model is valid. In this solution, the core model is in the `Domain` project. As the system grows, you can split into multiple contexts such as:
 
 - **Sales Context**: Orders, OrderLines, Pricing rules.
@@ -49,6 +53,7 @@ A bounded context is a boundary within which a particular model is valid. In thi
 Each context can have its own model, storage, and language without forcing one model to fit all.
 
 #### Subdomains
+
 Subdomains describe business areas:
 
 - **Core Domain**: The key differentiator (likely Orders/Sales here).
@@ -56,6 +61,7 @@ Subdomains describe business areas:
 - **Generic Subdomains**: Commodity concerns (Authentication, Emailing, Logging).
 
 #### Context Mapping
+
 Context mapping describes integration between bounded contexts. Common patterns include:
 
 - **Partnership**: Two teams evolve together.
