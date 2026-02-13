@@ -20,7 +20,7 @@ namespace DomainDrivenDesignUdemy.Infrastructur.Context.Repositories
 
         public Task<List<Category>> GetAllAsync(CancellationToken cancellationToken = default)
         {
-            return _context.Categories.ToListAsync(cancellationToken);
+            return _context.Categories.Include(c => c.Products).ToListAsync(cancellationToken);
         }
     }
 }

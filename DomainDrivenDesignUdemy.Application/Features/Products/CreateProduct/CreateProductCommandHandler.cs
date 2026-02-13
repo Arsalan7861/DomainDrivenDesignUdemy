@@ -22,7 +22,7 @@ namespace DomainDrivenDesignUdemy.Application.Features.Products.CreateProduct
                 request.Quantity,
                 request.Amount,
                 request.Currency,
-                request.Id,
+                request.CategoryId,
                 cancellationToken);
 
             await _unitOfWork.SaveChangesAsync(cancellationToken);

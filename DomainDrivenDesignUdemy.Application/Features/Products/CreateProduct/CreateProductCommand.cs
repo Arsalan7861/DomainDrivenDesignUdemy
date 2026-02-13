@@ -7,5 +7,5 @@ namespace DomainDrivenDesignUdemy.Application.Features.Products.CreateProduct
         int Quantity,
         decimal Amount,
         string Currency,
-        Guid Id) : IRequest;
+        Guid CategoryId) : IRequest;
 }

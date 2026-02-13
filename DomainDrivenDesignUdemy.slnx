@@ -3,4 +3,5 @@
   <Project Path="DomainDrivenDesignUdemy.ConsoleApp/DomainDrivenDesignUdemy.ConsoleApp.csproj" />
   <Project Path="DomainDrivenDesignUdemy.Domain/DomainDrivenDesignUdemy.Domain.csproj" />
   <Project Path="DomainDrivenDesignUdemy.Infrastructur/DomainDrivenDesignUdemy.Infrastructur.csproj" Id="e71b1d96-d7c7-486c-a53e-23ab2e28c11c" />
+  <Project Path="DomainDrivenDesignUdemy.WebApi/DomainDrivenDesignUdemy.WebApi.csproj" Id="ee9fd0da-05d1-4968-8f1e-cc9b922344bb" />
 </Solution>
